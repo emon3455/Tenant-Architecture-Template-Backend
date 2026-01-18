@@ -1,0 +1,18 @@
+<h2>Welcome to <%= orgName || 'our platform' %>!</h2>
+<p>Hi <strong><%= (client && client.name) || name || 'there' %></strong>,</p>
+
+<p>Your client account has been created successfully.</p>
+
+<% if (typeof tempPassword !== 'undefined' && tempPassword) { %>
+  <h3>Temporary Password</h3>
+  <p>Please use this temporary password on first login: <strong><%= tempPassword %></strong></p>
+<% } %>
+
+<% if (typeof loginUrl !== 'undefined' && loginUrl) { %>
+  <p>You can sign in here: <a href="<%= loginUrl %>"><%= loginUrl %></a></p>
+<% } %>
+
+<p>We’re excited to have you. If you didn’t request this account, please reply to this email.</p>
+
+<p>Thanks,<br/>
+The <%= orgName || 'Support' %> Team</p>
